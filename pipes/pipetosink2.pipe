@@ -1,0 +1,13 @@
+NODE pipetosink2_node
+SQL >
+    SELECT * FROM demo_analytics_events_1564
+
+TYPE SINK
+EXPORT_SERVICE s3_iamrole
+EXPORT_CONNECTION_NAME sinks02
+EXPORT_SCHEDULE @on-demand
+EXPORT_BUCKET_URI s3://sinks02/
+EXPORT_FILE_TEMPLATE export_{version}
+EXPORT_FORMAT csv
+EXPORT_COMPRESSION None
+EXPORT_STRATEGY @new
