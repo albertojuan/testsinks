@@ -1,6 +1,6 @@
 NODE datasource_pipe_6691_0
 SQL >
-    SELECT * FROM datasource
+    SELECT * FROM datasource order by timestamp desc
 
 TYPE SINK
 EXPORT_SERVICE s3_iamrole
